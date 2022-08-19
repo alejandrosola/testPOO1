@@ -10,7 +10,7 @@ public class Terreno extends Inmueble {
 		super (domicilio, superficie, cantidadAmbientes, precio);
 		this.enEsquina = enEsquina;
 	}
-		
+		//
 	public boolean getEnEsquina( ) {
 		return enEsquina;
 	}
@@ -20,7 +20,7 @@ public class Terreno extends Inmueble {
 		System.out.println ("En esquina: " + getEnEsquina( ));
 	}
 
-	// nuevo método:
+	// nuevo mï¿½todo:
 	public double comisionVendedor( ) {
 		return 0.01 * getPrecio( );
 	}

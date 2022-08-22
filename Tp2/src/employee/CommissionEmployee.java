@@ -2,6 +2,8 @@ package employee;
 // Fig. 10.7: CommissionEmployee.java
 // CommissionEmployee class extends Employee.
 
+import java.time.LocalDate;
+
 public class CommissionEmployee extends Employee 
 {
    private double grossSales; // gross weekly sales
@@ -9,9 +11,9 @@ public class CommissionEmployee extends Employee
 
    // five-argument constructor
    public CommissionEmployee( String first, String last, String ssn, 
-      double sales, double rate )
+      double sales, double rate, LocalDate birth)
    {
-      super( first, last, ssn );
+      super(first, last, ssn, birth);
       setGrossSales( sales );
       setCommissionRate( rate );
    } // end five-argument CommissionEmployee constructor

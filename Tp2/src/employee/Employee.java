@@ -2,18 +2,23 @@ package employee;
 // Fig. 10.4: Employee.java
 // Employee abstract superclass.
 
+import java.time.LocalDate;
+
 public abstract class Employee 
 {
    private String firstName;
    private String lastName;
    private String socialSecurityNumber;
-
+   private LocalDate birthDate;
+   private static double ADDITIONAL = 999999;
+   
    // three-argument constructor
-   public Employee( String first, String last, String ssn )
+   public Employee( String first, String last, String ssn, LocalDate birthDate)
    {
       firstName = first;
       lastName = last;
       socialSecurityNumber = ssn;
+      this.birthDate = birthDate;
    } // end three-argument Employee constructor
 
    // set first name
@@ -52,15 +57,22 @@ public abstract class Employee
       return socialSecurityNumber;
    } // end method getSocialSecurityNumber
 
+   
    // return String representation of Employee object
    public String toString()
    {
       return String.format( "%s %s\nsocial security number: %s", 
          getFirstName(), getLastName(), getSocialSecurityNumber() );
    } // end method toString
-
+   
    // abstract method overridden by subclasses
    public abstract double earnings(); // no implementation here
+
+   public double salary(LocalDate date) {
+	   return (date.getMonth().equals(this.birthDate.getMonth())) ? 
+			   this.earnings() + ADDITIONAL : this.earnings();
+   }
+   
 } // end abstract class Employee
 
 

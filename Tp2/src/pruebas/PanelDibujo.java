@@ -1,8 +1,5 @@
 package pruebas;
 
-// Fig. 8.19: PanelDibujo.java
-// Programa que utiliza la clase MiLinea
-// para dibujar l�neas al azar.
 import java.awt.Color;
 import java.awt.Graphics;
 
@@ -13,6 +10,7 @@ import geometria.Figura;
 import geometria.FiguraCompuesta;
 import geometria.Poligono;
 import geometria.Punto;
+
 
 public class PanelDibujo extends JPanel {
 
